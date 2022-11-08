@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	input[type='text'],
+	input[type='password'],
+	input[type='date'],
+	textarea,
+	select {
+		@apply bg-primary bg-opacity-30 border-[0.5px] border-blue-900 border-opacity-60 focus:ring focus:ring-transparent placeholder:text-white autofill:bg-transparent;
+	}
+
+	.select {
+		@apply relative flex w-full sm:w-[49%] bg-primary bg-opacity-30 border-[0.5px] border-blue-900 border-opacity-60 cursor-pointer flex-col items-start rounded-lg;
+	}
+
+	.select .select-btn {
+		@apply w-full rounded-lg p-2 bg-primary;
+	}
+
+	.select .select-content {
+		@apply absolute top-[101%] w-full rounded-lg border-[1px] border-blue-900 border-opacity-30 p-2 bg-primary;
+	}
+
+	.select .select-content .select-item {
+		@apply cursor-pointer rounded-lg px-2 py-[2px] transition-all duration-200 hover:bg-blue-900 hover:bg-opacity-30;
+	}
+
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	textarea:-webkit-autofill,
+	textarea:-webkit-autofill:hover,
+	textarea:-webkit-autofill:focus,
+	select:-webkit-autofill,
+	select:-webkit-autofill:hover,
+	select:-webkit-autofill:focus {
+		-webkit-text-fill-color: #fff;
+		background-color: #1b1b6c;
+		transition: background-color 5000s ease-in-out 0s;
+	}
+}
+
+input {
+	color-scheme: dark;
+}
