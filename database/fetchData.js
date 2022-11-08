@@ -1,5 +1,5 @@
 /** Controller */
-import Users from '../models/user';
+import Users from '@/models/user';
 
 // get : http://localhost:3000/api/users
 export async function getUsers(req, res) {
@@ -19,11 +19,12 @@ export async function getUser(req, res) {
 	try {
 		const { id } = req.query;
 
-		if (id) {
-			const user = await Users.findById(id);
+		const user = await Users.findById(id);
+		if (user) {
 			res.status(200).json(user);
+		} else {
+			res.status(404).json({ error: 'User not Selected...!' });
 		}
-		res.status(404).json({ error: 'User not Selected...!' });
 	} catch (error) {
 		res.status(404).json({ error: 'Cannot get the User...!' });
 	}
