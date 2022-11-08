@@ -3,8 +3,6 @@ import { BiBrush, BiPlus } from 'react-icons/bi';
 const Form = ({
 	firstname,
 	lastname,
-	name,
-	avatar,
 	salary,
 	date,
 	email,

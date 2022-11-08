@@ -17,10 +17,10 @@ export async function getUsers(req, res) {
 // get : http://localhost:3000/api/users/1
 export async function getUser(req, res) {
 	try {
-		const { userId } = req.query;
+		const { id } = req.query;
 
-		if (userId) {
-			const user = await Users.findById(userId);
+		if (id) {
+			const user = await Users.findById(id);
 			res.status(200).json(user);
 		}
 		res.status(404).json({ error: 'User not Selected...!' });
@@ -48,11 +48,11 @@ export async function postUser(req, res) {
 // put : http://localhost:3000/api/users/1
 export async function putUser(req, res) {
 	try {
-		const { userId } = req.query;
+		const { id } = req.query;
 		const formData = req.body;
 
-		if (userId && formData) {
-			const user = await Users.findByIdAndUpdate(userId, formData);
+		if (id && formData) {
+			const user = await Users.findByIdAndUpdate(id, formData);
 			res.status(200).json(user);
 		}
 		res.status(404).json({ error: 'User Not Selected...!' });
@@ -66,10 +66,10 @@ export async function putUser(req, res) {
 // delete : http://localhost:3000/api/users/1
 export async function deleteUser(req, res) {
 	try {
-		const { userId } = req.query;
+		const { id } = req.query;
 
-		if (userId) {
-			const user = await Users.findByIdAndDelete(userId);
+		if (id) {
+			const user = await Users.findByIdAndDelete(id);
 			return res.status(200).json(user);
 		}
 

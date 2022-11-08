@@ -9,8 +9,6 @@ import { BiEdit, BiTrashAlt } from 'react-icons/bi';
 import { useQuery } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 const Table = () => {
-	const state = useSelector(state => state.app.client.toggleForm);
-
 	const {
 		data: users,
 		error,

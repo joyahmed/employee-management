@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export const ReducerSlice = createSlice({
-	name: 'rcquery-redux',
+	name: 'reactquery-redux',
 	initialState,
 	reducers: {
 		toggleChangeAction: state => {

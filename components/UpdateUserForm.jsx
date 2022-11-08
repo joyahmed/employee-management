@@ -21,7 +21,6 @@ const UpdateUserForm = ({
 		newData => updateUser(formId, newData),
 		{
 			onSuccess: async data => {
-				// queryClient.setQueryData('users', (old) => [data])
 				queryClient.prefetchQuery('users', getUsers);
 			}
 		}
