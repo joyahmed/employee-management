@@ -1,8 +1,8 @@
 import { useReducer } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
-import Bug from './bug';
+import Bug from './Bug';
 import Form from './Form';
-import Success from './success';
+import Success from './Success';
 import { addUser, getUsers } from "@/lib/fetcher"
 
 
