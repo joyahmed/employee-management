@@ -1,9 +1,5 @@
 import connectMongo from '@/database/connectDb';
-import {
-	deleteUser,
-	getUser,
-	updateUser
-} from '@/database/fetchData';
+import { deleteUser, getUser, putUser } from '@/database/fetchData';
 
 connectMongo();
 
@@ -17,7 +13,7 @@ const handler = async (req, res) => {
 			getUser(req, res);
 			break;
 		case 'PUT':
-			updateUser(req, res);
+			putUser(req, res);
 			break;
 		case 'DELETE':
 			deleteUser(req, res);
